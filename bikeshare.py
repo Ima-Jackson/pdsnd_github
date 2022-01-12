@@ -40,28 +40,49 @@ def get_filters():
 
 
     # Create dictionary to store elements in months
-    months = ('january', 'february', 'march', 'april', 'may', 'june', 'all')
+    months_dict = { 'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6, 'all': 7 }
     month = ' '
+
     while True:
         try:
             print("\Accepted input: Month name not case sensitive (for example, March or MARCH). Month name in title case (e.g. March).")
             print("\n(If you choose to view data for all months, type 'all', or 'All', or 'ALL')")
             month = input("which month would you like to see data on in january, february, march, april, may, june?").lower()
-            if month in months:
+            if month in months_dict:
                 break
             else:
                 print("Sorry, there must have been an error, please enter a valid month")
         except Exception as e:
             ("Sorry, you entered an invalid input")
+<<<<<<< HEAD
 
 
+||||||| 7d18fdb
+                      
+                  
+=======
+>>>>>>> refactoring
 
+<<<<<<< HEAD
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all']
 
+||||||| 7d18fdb
+    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all']
+    
+=======
+
+    # get user input for day of week (sunday, monday, tuesday, ... , all)
+
+    # Create dictionary to store elements in days
+    days_dict = { 'sunday': 1, 'monday': 2, 'tuesday': 3, 'wednesday': 4, 'thursday': 5, 'friday': 6, 'saturday': 7, 'all': 8 }
+    day = ' '
+
+>>>>>>> refactoring
     while True:
-        day = input("which particular day of the week would you like to explore? If you do not want data on a particular day, enter                'all'").lower()
-        if day in days:
+        day = input("which particular day of the week would you like to explore? If you do not want data on a particular day, enter             'all'").lower()
+        if day in days_dict:
             break
         else:
             print("Sorry, you entered an invalid input")
@@ -157,6 +178,12 @@ def station_stats(df):
     frequently_used_end_station = df['End Station'].mode()[0]
 
     print('The Most Common End Station is {}.'.format(frequently_used_end_station))
+<<<<<<< HEAD
+||||||| 7d18fdb
+    
+=======
+
+>>>>>>> refactoring
 
 
 
@@ -215,15 +242,33 @@ def user_stats(df):
     user_types = df['User Type'].value_counts()
 
     print('The Value Counts For Each User Type is {}.'.format(user_types))
+<<<<<<< HEAD
 
 
     # Display counts of gender
+||||||| 7d18fdb
+    
+    
+    # TO DO: Display counts of gender
+=======
+
+
+    # TO DO: Display counts of gender
+>>>>>>> refactoring
     try:
         gender_counts = df['Gender'].value_counts()
         print('The Gender Counts for each User Type is {}.'.format(gender_counts))
 
     except Exception as e:
         print('There is no data available for Gender Counts')
+<<<<<<< HEAD
+||||||| 7d18fdb
+        
+     
+=======
+
+
+>>>>>>> refactoring
 
 
 
@@ -247,8 +292,16 @@ def user_stats(df):
 
 
 def display_data(df):
+<<<<<<< HEAD
     """Displays 5 rows of individual trip data each time for every request made by the user to view data, until the user says stop."""
 
+||||||| 7d18fdb
+    """Displays 5 rows of individual trip data."""
+    
+=======
+    """Displays 5 rows of individual trip data."""
+
+>>>>>>> refactoring
     view_data = input("Would you like to view 5 rows of individual trip data? Enter yes or no?")
     start_loc = 0
 
@@ -276,9 +329,14 @@ def main():
         user_stats(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
-            break
+        if restart.lower() == 'yes':
+            main()
+        elif restart.lower() == 'no':
+            return
+    else:
+        print("Sorry, you entered an invalid input. Please type 'yes' or 'no' ")
 
+    return restart()
 
 if __name__ == "__main__":
 	main()
