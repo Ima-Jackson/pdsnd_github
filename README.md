@@ -52,5 +52,6 @@ Resources
 * Panda Documentation
 * https://www.codecademy.com/forum_questions/51d21dc58c1cccb4ab0020e5
 * https://www.geeksforgeeks.org/python-while-loop/
+* https://stackoverflow.com/questions/56880471/calculate-travel-time-in-pandas
 * I also gained knowledge from Udacity classroom
 
