@@ -56,13 +56,15 @@ def get_filters():
             ("Sorry, you entered an invalid input")
 
 
+    # get user input for day of week (sunday, monday, tuesday, ... , all)
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all']
+    # Create dictionary to store elements in days
+    days_dict = { 'sunday': 1, 'monday': 2, 'tuesday': 3, 'wednesday': 4, 'thursday': 5, 'friday': 6, 'saturday': 7, 'all': 8 }
+    day = ' '
 
     while True:
-        day = input("which particular day of the week would you like to explore? If you do not want data on a particular day, enter                'all'").lower()
-        if day in days:
+        day = input("which particular day of the week would you like to explore? If you do not want data on a particular day, enter             'all'").lower()
+        if day in days_dict:
             break
         else:
             print("Sorry, you entered an invalid input")
