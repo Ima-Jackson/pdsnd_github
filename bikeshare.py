@@ -279,9 +279,14 @@ def main():
         user_stats(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
-            break
+        if restart.lower() == 'yes':
+            main()
+        elif restart.lower() == 'no':
+            return
+    else:
+        print("Sorry, you entered an invalid input. Please type 'yes' or 'no' ")
 
+    return restart()
 
 if __name__ == "__main__":
 	main()
