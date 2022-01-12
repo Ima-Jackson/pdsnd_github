@@ -123,17 +123,17 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
+    # Display the most popular month
     popular_month = df['month'].mode()[0]
 
     print('The Most Popular Month is {}.'.format(popular_month))
 
-    # TO DO: display the most common day of week
+    # Display the most popular day of week
     popular_day_of_week = df['day_of_week'].mode()[0]
 
     print('The Most Popular Day of Week is {}.'.format(popular_day_of_week))
 
-    # TO DO: display the most common start hour
+    # Display the most popular start hour
     popular_start_hour = df['hour'].mode()[0]
 
     print('The Most Popular Start Hour is {}.'.format(popular_start_hour))
@@ -148,19 +148,19 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    # Display the most frequently used start station
     frequently_used_start_station = df['Start Station'].mode()[0]
 
     print('The Most Common Start Station is {}.'.format(frequently_used_start_station))
 
-    # TO DO: display most commonly used end station
+    # Display the most frequently used end station
     frequently_used_end_station = df['End Station'].mode()[0]
 
     print('The Most Common End Station is {}.'.format(frequently_used_end_station))
 
 
 
-    # TO DO: display most frequent combination of start station and end station trip
+    # Display most frequent combination of start station and end station trip
     df['Start To End'] = df['Start Station'].str.cat(df['End Station'], sep=' to ')
     frequent_station_combination = df['Start To End'].mode()[0]
 
@@ -177,7 +177,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # Display total travel time
     total_travel_time = df['Trip Duration'].sum()
 
     # Converting the trip duration to minutes and seconds format
@@ -188,7 +188,7 @@ def trip_duration_stats(df):
 
     print('The Total Travel Time is {} hours, {} minutes and {} seconds.'.format(hour, minute, second))
 
-    # TO DO: display mean travel time
+    # Display the mean travel time
     average_travel_time = round(df['Trip Duration'].mean())
 
     # Converting the average travel time to minutes and seconds format
@@ -211,13 +211,13 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+    # Display counts of user types
     user_types = df['User Type'].value_counts()
 
     print('The Value Counts For Each User Type is {}.'.format(user_types))
 
 
-    # TO DO: Display counts of gender
+    # Display counts of gender
     try:
         gender_counts = df['Gender'].value_counts()
         print('The Gender Counts for each User Type is {}.'.format(gender_counts))
@@ -227,7 +227,7 @@ def user_stats(df):
 
 
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth
     try:
         earliest_year = int(df['Birth Year'].min())
         print('The Earliest Birth Year is {}.'.format(earliest_year))
@@ -248,7 +248,7 @@ def user_stats(df):
 
 def display_data(df):
     """Displays 5 rows of individual trip data each time for every request made by the user to view data, until the user says stop."""
-    
+
     view_data = input("Would you like to view 5 rows of individual trip data? Enter yes or no?")
     start_loc = 0
 
